@@ -5,6 +5,12 @@
 	pageEncoding="UTF-8"%>
 <%
 	ArrayList<MemberInfo> members = (ArrayList<MemberInfo>) application.getAttribute("members");
+
+	if (application.getAttribute("members") != null) {
+		members = (ArrayList<MemberInfo>) application.getAttribute("members");
+	} else {
+		members = new ArrayList<MemberInfo>();
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -23,7 +29,7 @@ table {
 
 td {
 	padding: 10px 20px;
-	text-align:center;
+	text-align: center;
 }
 </style>
 </head>

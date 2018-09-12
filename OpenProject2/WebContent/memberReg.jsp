@@ -12,9 +12,6 @@
 		members = new ArrayList<MemberInfo>();
 	}
 
-	if (members == null) {
-		members = new ArrayList<MemberInfo>();
-	}
 	request.setCharacterEncoding("utf-8");
 
 	String userId = request.getParameter("userId");
@@ -27,8 +24,7 @@
 	memberInfo.setPassword(password);
 
 	members.add(memberInfo);
-	session.setAttribute("members", members);
-	response.sendRedirect("memberRegForm.jsp");
+	application.setAttribute("members", members);
 %>
 <!DOCTYPE html>
 <html>
