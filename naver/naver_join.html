@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NAVER JOIN FORM</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        body {
+            background-color: #FFFCFC;
+        }
+
+        #inside {
+            padding-left: 200px;
+            padding-top: 80px;
+        }
+
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        #logo>img {
+            width: 300px;
+            padding: 20px 0px 0px 250px;
+        }
+
+        #certification {
+            background-color: #ff7a7a;
+            width: 127px;
+            height: 55px;
+            color: white;
+            text-align: center;
+            line-height: 55px;
+            display: inline-block;
+            margin-left: 9px;
+        }
+
+        #join {
+            background-color: #ff7a7a;
+            width: 300px;
+            height: 70px;
+            color: white;
+            text-align: center;
+            line-height: 70px;
+            font-size: 25px;
+            margin-left: 50px;
+        }
+
+        #footer {
+            padding: 40px 0px 0px 100px;
+            ;
+        }
+
+        #footer>a {
+            text-align: center;
+            text-decoration: none;
+            padding-right: 20px;
+            color: #747474;
+        }
+
+        #footer>a:hover {
+            text-decoration: underline;
+            color: #ff7a7a;
+        }
+
+        #footer2>img {
+            width: 90px;
+        }
+
+        #footer2 {
+            padding: 20px 0px 10px 200px;
+        }
+
+        .phone {
+            padding: 0px;
+        }
+
+        div>input {
+            width: 390px;
+            height: 40px;
+            margin: 20px 0px 20px 0px;
+        }
+
+        div>select {
+            margin: 20px 0px 20px 0px;
+        }
+
+        #birthday>#year,
+        #birthday>#day {
+            width: 126px;
+            height: 40px;
+        }
+
+        #birthday>#month {
+            width: 126px;
+            height: 48px;
+        }
+
+        #gender_select,
+        #country {
+            width: 394px;
+            height: 48px;
+        }
+
+        #tel_input {
+            width: 250px;
+            height: 50px;
+        }
+        #inner_email{
+            display: inline-block;
+            margin-left: -110px;
+            color: gray;
+        }
+
+    </style>
+    <script>
+    
+        function id_ck() {
+            
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="logo">
+            <img src="naver.png">
+        </div>
+        <div id="inside">
+            <div id="id">
+                <b>아이디</b><br>
+                <input type="text" id="id_input" onblur="id_ck()" required>
+                <span id="inner_email">@naver.com</span>
+            </div>
+
+            <div id="password">
+                <b>비밀번호</b><br>
+                <input type="password" required>
+            </div>
+            <div id="password_com">
+                <b>비밀번호 재확인</b><br>
+                <input type="password" required>
+            </div>
+            <div id="name">
+                <b>이름</b><br>
+                <input type="text" required>
+            </div>
+
+            <div id="birthday">
+                <b>생년월일</b><br>
+                <input type="text" placeholder="년(4자)" id="year" required>
+                <select id="month">
+            <option value="month">월</option>
+            <option value="january">1</option>
+            <option value="february">2</option>
+            <option value="march">3</option>
+            <option value="april">4</option>
+            <option value="may">5</option>
+            <option value="june">6</option>
+            <option value="july">7</option>
+            <option value="august">8</option>
+            <option value="september">9</option>
+            <option value="october">10</option>
+            <option value="november">11</option>
+            <option value="december">12</option>
+        </select>
+                <input type="text" placeholder="일" id="day" required>
+            </div>
+            <div id="gender">
+                <b>성별</b><br>
+                <select id="gender_select" required>
+               <option value="gender">성별</option>
+                <option value="men">남자</option>
+                <option value="women">여자</option>
+            </select>
+            </div>
+            <div>
+                <b>본인 확인 이메일</b><span>(선택)</span><br>
+                <input type="text" placeholder="선택입력">
+            </div>
+            <div id="phone" class="phone">
+                <b>휴대전화</b><br>
+                <select id="country">
+                <option value="hongkong">홍콩 +852</option>
+                <option value="korea" selected>대한민국 +82</option>
+                <option value="prance">프랑스 +33</option>
+                <option value="japan">일본 +81</option>
+            </select><br>
+                <span id="line">
+                <input type="text" placeholder="전화번호 입력" id="tel_input" class="phone"></span>
+                <div id="certification">
+                    <label for="certification">인증번호 받기</label>
+                </div><br>
+                <input type="text" disabled placeholder="인증번호 입력하세요" class="phone">
+            </div>
+            <div id="join">
+                <label for="join">가입하기</label>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="#">이용약관</a>
+            <a href="#">개인정보처리방침</a>
+            <a href="#">책임의 한계와 법적고지</a>
+            <a href="#">회원정보 고객센터</a>
+        </div>
+        <div id="footer2">
+            <img src="naver.png">
+            <span id="copy"> Copyright KIMSOL. All Rights Reserved.</span>
+        </div>
+    </div>
+</body>
+
+</html>
