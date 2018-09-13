@@ -6,11 +6,11 @@
 <%
 	ArrayList<MemberInfo> members = (ArrayList<MemberInfo>) application.getAttribute("members");
 
-	if (application.getAttribute("members") != null) {
+/* 	if (application.getAttribute("members") != null) {
 		members = (ArrayList<MemberInfo>) application.getAttribute("members");
 	} else {
 		members = new ArrayList<MemberInfo>();
-	}
+	} */
 %>
 <!DOCTYPE html>
 <html>
@@ -60,7 +60,7 @@ td {
 				<td><%=member.getPassword()%></td>
 				<td><%=member.getUserName()%></td>
 				<td><%=member.getUserPhoto()%></td>
-				<td>수정 삭제</td>
+				<td><a href="memberEdit.jsp">수정</a> <a href="memberRemove.jsp">삭제</a></td>
 			</tr>
 			<%
 				}

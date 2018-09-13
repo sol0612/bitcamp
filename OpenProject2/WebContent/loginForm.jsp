@@ -3,7 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="member.model.Cookies"%>
+<%-- <%@page import="member.model.Cookies"%>
 <%
 	Cookies cookies = new Cookies(request);
 %>
@@ -38,7 +38,7 @@
 			}
 		}
 	}
-%>
+%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,16 +64,17 @@ h2, td {
 			<table>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="userId"
-						value="<%if (cookies.exists("AUTH")) {%><%=cookies.getValue("AUTH")%><%}%>"></td>
+					<td><input type="text" name="userId">
+						<%-- value="<%if (cookies.exists("AUTH")) {%><%=cookies.getValue("AUTH")%><%}%>"> --%>
+						</td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
 					<td><input type="password" name="password"></td>
 				</tr>
 				<tr>
-					<td><input type="checkbox" name="remember"
-						<%if (cookies.exists("AUTH")) {%> <%=" checked"%> <%}%>>
+					<td><input type="checkbox" name="remember">
+						<%-- <%if (cookies.exists("AUTH")) {%> <%=" checked"%> <%}%>> --%>
 						아이디기억하긔ㅇㅅㅇ</td>
 				</tr>
 				<tr>
