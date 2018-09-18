@@ -1,0 +1,154 @@
+-- 1
+select ename 이름, sal 급여, sal+300 인상된급여
+from emp;
+
+-- 2
+select ename 이름, sal 급여, sal*12+100 "연간 총 수입"
+from emp
+order by sal desc;
+
+-- 3
+select ename 이름, sal 급여
+from emp
+order by sal desc;
+
+-- 4
+select ename 이름, deptno 부서번호
+from emp
+where empno=7788;
+
+-- 5
+select ename 이름, sal 급여
+from emp
+where sal not in between 2000 and 3000
+order by ename;
+
+-- 6
+select ename 이름, job 담당업무, hiredate 입사일
+from emp
+where hiredate between '81/02/20' and '81/05/01';
+
+-- 7
+select ename 이름, deptno 부서번호
+from emp
+where deptno between 20 and 30
+order by ename desc;
+
+-- 8
+select ename 이름, sal 급여, deptno 부서번호
+from emp
+where (deptno between 20 and 30) 
+and (sal between 2000 and 3000)
+order by ename asc;
+
+-- 9
+select ename 이름, hiredate 입사일
+from emp
+where hiredate like '81/%';
+
+-- 10
+select ename 이름, job 담당업무
+from emp
+where mgr is null;
+
+-- 11
+select ename 이름, sal 급여, comm 커미션
+from emp
+where comm is not null
+order by sal,comm desc;
+
+-- 12
+select ename 이름
+from emp
+where ename like '__R%';
+
+-- 13
+select ename 이름
+from emp
+where ename like '%A%E%' 
+and ename like '%E%A%';
+
+-- 14
+select ename, job, sal
+from emp
+where job in ('CLERK', 'SALESMAN')
+and sal not in ('1600' ,'950' ,'1300');
+
+-- 15
+select ename 이름, sal 급여, comm 커미션
+from emp
+where comm>=500;
+
+-- 16
+select ename 이름, substr(hiredate,1,5) "입사년도/달"
+from emp;
+
+-- 17
+select ename, substr(hiredate, 4, 2)
+from emp
+where hiredate like '___04%';
+
+-- 18
+select ename
+from emp
+where mod(empno, 2)=0;
+
+-- 19
+select to_char(hiredate, 'yy/mm/dy')
+from emp;
+
+-- 20
+select to_date('18/09/17','yy/mm/dd')-to_date('18/01/01','yy/mm/dd') 날짜
+from dual;
+
+-- 21
+-- nvl(컬럼명, 0) -> null을 0으로 대체해줌
+select ename, nvl(mgr, 0)
+from emp;
+
+-- 22
+select ename, job, decode(job, 'ANALYST', sal+200,'SALESMAN', sal+180, 'MANAGER', sal+150, 'CLERK', sal+100) 급여
+from emp;
+
+-- 23
+select max(sal), min(sal), sum(sal), round(avg(sal), 0)
+from emp;
+
+-- 24
+select job, max(sal), min(sal), sum(sal), round(avg(sal), 0)
+from emp
+group by job;
+
+-- 25
+select job, count(*)
+from emp
+group by job;
+
+-- 26
+select job, count(*)
+from emp
+where job='MANAGER'
+group by job;
+
+-- 27
+select max(sal)-min(sal)
+from emp;
+
+-- 28
+select job, min(sal)
+from emp
+where mgr is not null
+group by job
+order by min(sal) desc;
+
+-- 29
+select deptno, count(deptno), round(avg(sal),2)
+from emp
+group by deptno;
+
+-- 30 wait
+select e.deptno, d.dname, d.loc, count(e.deptno)--, round(avg(e.sal),0)
+from emp e, dept d;
+
+-- 31
+select 
