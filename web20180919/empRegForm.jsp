@@ -4,19 +4,6 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	Class.forName("oracle.jdbc.driver.OracleDriver");
-
-	Connection conn = null;
-	PreparedStatement pstmt = null;
-	int resultCnt = 0;
-
-	String url = "jdbc:oracle:thin:@localhost:1522:orcl";
-	String user = "scott";
-	String pw = "1234";
-
-	conn = DriverManager.getConnection(url, user, pw);
-%>
 <!DOCTYPE html>
 <html>
 <head>
