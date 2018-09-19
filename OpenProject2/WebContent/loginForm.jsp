@@ -3,42 +3,6 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- <%@page import="member.model.Cookies"%>
-<%
-	Cookies cookies = new Cookies(request);
-%>
-<%
-	ArrayList<MemberInfo> members = (ArrayList<MemberInfo>) application.getAttribute("members");
-
-	if (application.getAttribute("members") != null) {
-		members = (ArrayList<MemberInfo>) application.getAttribute("members");
-	} else {
-		members = new ArrayList<MemberInfo>();
-	}
-
-	MemberInfo memberinfo = null;
-	String id = request.getParameter("id");
-	String password = request.getParameter("password");
-	String remember = request.getParameter("remember");
-	// checkbox name이 remember 이고 checked = on, unchecked = null 값을 받게 된다.
-
-	memberinfo.setUserId("id");
-	memberinfo.setPassword("password");
-			
-	if (id == memberinfo.getUserId() && password == memberinfo.getPassword()) {
-		session.setAttribute("id", id);
-		if (remember != null && remember.equals("on")) {
-			response.addCookie(Cookies.createCookie("AUTH", id, "/loginForm.jsp", 60 * 60));
-		} else {//쿠키 삭제 
-			if (remember == null) {
-				//PrintWriter out = response.getWriter();
-				//request.setAttribute("getplaceholder", id); setAttribute 안됨	
-				response.addCookie(Cookies.createCookie("AUTH", "", "/loginForm.jsp", 0));
-				response.sendRedirect("/loginForm.jsp");
-			}
-		}
-	}
-%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +29,6 @@ h2, td {
 				<tr>
 					<td>아이디</td>
 					<td><input type="text" name="userId">
-						<%-- value="<%if (cookies.exists("AUTH")) {%><%=cookies.getValue("AUTH")%><%}%>"> --%>
 						</td>
 				</tr>
 				<tr>
@@ -74,7 +37,6 @@ h2, td {
 				</tr>
 				<tr>
 					<td><input type="checkbox" name="remember">
-						<%-- <%if (cookies.exists("AUTH")) {%> <%=" checked"%> <%}%>> --%>
 						아이디기억하긔ㅇㅅㅇ</td>
 				</tr>
 				<tr>
