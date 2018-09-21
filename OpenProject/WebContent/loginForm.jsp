@@ -36,8 +36,7 @@ h2, td {
 					<td><input type="password" name="password"></td>
 				</tr>
 				<tr>
-					<td><input type="checkbox" name="remember">
-						아이디기억하긔ㅇㅅㅇ</td>
+					<td><input type="checkbox" name="remember">아이디기억하긔ㅇㅅㅇ</td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="로그인"></td>

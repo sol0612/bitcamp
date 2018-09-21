@@ -44,7 +44,7 @@ h2, td {
 	<div id="contents">
 		<h2>회원정보 수정</h2>
 		<hr>
-		<form action="memberEdit.jsp" method="post">
+		<form action="memberEdit.jsp?userid=<%=userid %>>" method="post">
 			<table>
 				<tr>
 					<td>아이디(이메일)</td>

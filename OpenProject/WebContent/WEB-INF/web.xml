@@ -16,7 +16,7 @@
 
 	<servlet>
 		<servlet-name>DBCPInit</servlet-name>
-		<servlet-class>DBCPInit</servlet-class>
+		<servlet-class>open.DBCPInit</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
   
